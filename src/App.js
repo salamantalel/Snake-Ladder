@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {BrowserRouter as Router,Routes, Route } from "react-router-dom";
+
+
+import Board from "./components/Board";
+import Dice from "./components/Dice";
+import Leaderboard from "./components/Leaderboard";
+import Player from "./components/Player";
+import GameControls from "./components/GameControls";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <div>
+      <h1>Welcome to Nicolada:Snake & Ladder</h1>
+        <Routes>
+          
+          <Route path="/" element={<Board />} />
+          <Route path="/player" element={<Player />} />
+          <Route path="/dice" element={<Dice />} />
+          <Route path="/controls" element={<GameControls />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
