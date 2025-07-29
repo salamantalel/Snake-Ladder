@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 
 function PlayerList() {
@@ -25,3 +26,33 @@ function PlayerList() {
 }
 
 export default PlayerList;
+=======
+
+
+function Player() {
+
+    return (
+       <div>
+        <h2></h2>
+        <p></p>
+       </div>
+    );
+}
+
+
+
+
+
+export default Player;
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> a3e97243d3edb2362ed643d6b6cde880ed36b953

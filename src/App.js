@@ -1,30 +1,56 @@
-import React from "react";
-import {BrowserRouter as Router,Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
-
-import Board from "./components/Board";
+import GameBoard from "./components/GameBoard";
 import Dice from "./components/Dice";
 import Leaderboard from "./components/Leaderboard";
 import Player from "./components/Player";
 import GameControls from "./components/GameControls";
 
-
+                     
 function App() {
+ const [players, setPlayers] = useState([
+  { id:1,name: "Player 1", position:0 },
+  { id:2,name: "Player 2", position:0 }
+ ]);
+
+ const [ currentPlayerIndex, setCurrentPlayerIndex ] = useState(0);
+ const [ gameMessage, setGameMessage ] = useState("Game started! Player 1's turn");
+
   return (
-    <Router>
     <div>
-      <h1>Welcome to Nicolada:Snake & Ladder</h1>
+      <h1 className="title">Nicolada: Snake & Ladder </h1>
+
+      <p>{gameMessage}</p>
         <Routes>
           
-          <Route path="/" element={<Board />} />
-          <Route path="/player" element={<Player />} />
+          <Route path="/" element={
+            <Board
+            players={players}
+            currentPlayerIndex={currentPlayerIndex} 
+            />
+          } 
+      />
+          <Route path="/player" 
+                 element={<Player player={players[currentPlayerIndex]}
+          />} 
+                  />
           <Route path="/dice" element={<Dice />} />
-          <Route path="/controls" element={<GameControls />} />
+          <Route path="/controls" 
+                 element={
+                 <GameControls
+                   players={players}
+                   setPlayers={setPlayers}
+                   currentPlayerIndex={currentPlayerIndex}
+                   setCurrentPlayerIndex={setCurrentPlayerIndex}
+                   setGameMessage={setGameMessage}
+                    />
+                  }
+               />
           <Route path="/leaderboard" element={<Leaderboard />} />
 
         </Routes>
       </div>
-    </Router>
   );
 }
 
