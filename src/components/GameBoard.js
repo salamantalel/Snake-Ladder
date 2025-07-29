@@ -1,4 +1,7 @@
 import React from 'react';
+import background from '../assets/snakeladder.png';
+console.log("Background image path:", background);
+
 import './GameBoard.css'
 
 const GameBoard = () => {
@@ -15,9 +18,9 @@ if (row % 2 === 0) {
 }
 
 box.push(
-    <div className="box">
-    
-    </div>
+   <div className="box" key={boxNumber}>
+  {boxNumber}
+</div>
 );
 }
 }
@@ -27,7 +30,16 @@ box.push(
 
   return (
     <div className='biggger'>
-    <div className="board">
+    <div className="board"
+         style={{
+          backgroundImage:`url(${background})`,
+          backgroundSize:'cover',
+          MozBackgroundClip:'no-repeat',
+          backgroundPosition:'center',
+          height:'520px',
+          width:'520px'
+         }}
+    >
       {generateBox()}
     </div></div>
   );

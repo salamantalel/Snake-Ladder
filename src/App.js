@@ -25,7 +25,7 @@ function App() {
         <Routes>
           
           <Route path="/" element={
-            <Board
+            <GameBoard
             players={players}
             currentPlayerIndex={currentPlayerIndex} 
             />
