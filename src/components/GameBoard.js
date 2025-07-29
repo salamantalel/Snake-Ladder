@@ -32,7 +32,7 @@ box.push(
     <div className='biggger'>
     <div className="board"
          style={{
-          backgroundImage:`url(${background})`,
+          backgroundImage:url(${background}),
           backgroundSize:'cover',
           MozBackgroundClip:'no-repeat',
           backgroundPosition:'center',
