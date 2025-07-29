@@ -1,10 +1,21 @@
-import React from "react";
+import React from 'react';
+import './Leaderboard.css';
 
-function Leaderboard () {
+const Leaderboard = ({ players }) => {
+  const sortedPlayers = [...players].sort((a, b) => b.position - a.position);
 
-    return <h2></h2>;
-}
-
-
+  return (
+    <div className="leaderboard-container">
+      <h2>🏆 Leaderboard</h2>
+      <ul>
+        {sortedPlayers.map((player, index) => (
+          <li key={player.id}>
+            <strong>{index + 1}. {player.name}</strong> — Position: {player.position}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default Leaderboard;
