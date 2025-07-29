@@ -1,0 +1,12 @@
+.wholee{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px; /* space between board and button */
+min-height: 100vh;
+background-color: #ffffff;
+
+}
+.textt{
+    text-align: center;
+}
