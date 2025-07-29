@@ -1,11 +1,12 @@
 import React from 'react';
 import GameBoard from './GameBoard';
 import Dice from './Dice';
+import './App.css';
 
 const App = () => {
   return (
-    <div >
-      <h1> Snakes and Ladders</h1>
+    <div className='wholee'>
+      <h1 className='textt'> Snakes and Ladders</h1>
       <GameBoard />
       <Dice />
     </div>

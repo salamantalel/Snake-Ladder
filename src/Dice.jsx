@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Dice.css'
 
 const Dice = () => {
   const [diceNumber, setDiceNumber] = useState(null);
@@ -9,10 +10,10 @@ const Dice = () => {
   };
 
   return (
-    <div >
+    <div className='dicc'>
       <button onClick={rollDice} >Roll Dice</button>
       {diceNumber && (
-        <div >
+        <div className='numbtn' >
           {diceNumber}
         </div>
       )}
