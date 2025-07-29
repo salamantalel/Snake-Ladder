@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Board from "./components/Board";
+import GameBoard from "./components/GameBoard";
 import Dice from "./components/Dice";
 import Leaderboard from "./components/Leaderboard";
 import Player from "./components/Player";
@@ -25,7 +25,7 @@ function App() {
         <Routes>
           
           <Route path="/" element={
-            <Board
+            <GameBoard
             players={players}
             currentPlayerIndex={currentPlayerIndex} 
             />

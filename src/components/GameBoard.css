@@ -1,0 +1,28 @@
+.biggger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+  gap: 2px;
+  width: 520px;
+  height: 520px;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
