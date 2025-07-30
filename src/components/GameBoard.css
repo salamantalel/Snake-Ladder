@@ -1,3 +1,10 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .biggger {
   display: flex;
   justify-content: center;
@@ -5,24 +12,58 @@
   margin-top: 30px;
 }
 
-
 .board {
   display: grid;
-  grid-template-columns: repeat(10, 50px);
-  grid-template-rows: repeat(10, 50px);
-  gap: 2px;
-  width: 520px;
-  height: 520px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  width: 90vmin;
+  max-width: 520px;
+  aspect-ratio: 1;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #ccc;
+  padding: 0; /* ensure no extra spacing */
 }
 
 .box {
-  width: 60px;
-  height: 60px;
-  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.7rem;
   border: 1px solid #ccc;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.players-in-box {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  display: flex;
+  gap: 4px;
+}
+
+.player-token {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  position: absolute;
+  transform: translateY(5px); /* adjust if needed */
 }
 
+.player-0 {
+  background-color: purple;
+}
+
+.player-1 {
+  background-color: pink;
+}

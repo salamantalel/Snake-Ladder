@@ -1,10 +1,18 @@
 import React from 'react';
+import Dice from './Dice';
 import background from '../assets/snakeladder.png';
+import GameControls from './GameControls';
 import './GameBoard.css';
 
-console.log("Background image path:", background);
-
-const GameBoard = () => {
+function GameBoard({
+  players,
+  setPlayers,
+  currentPlayerIndex,
+  setCurrentPlayerIndex,
+  setGameMessage,
+  setDiceValue,
+  diceValue
+}) {
   const generateBox = () => {
     const box = [];
 
@@ -17,11 +25,22 @@ const GameBoard = () => {
           boxNumber = row * 10 + (9 - col) + 1;
         }
 
-        box.push(
-          <div className="box" key={boxNumber}>
-            {boxNumber}
-          </div>
-        );
+       box.push(
+  <div className="box" key={boxNumber}>
+    {boxNumber}
+    {players.map((player, index) =>
+      player.position === boxNumber ? (
+        <div
+          key={player.id}
+          className={`player-token player-${index}`}
+        >
+          {/* You can optionally show initials instead of full name */}
+          {player.name[0]}
+        </div>
+      ) : null
+    )}
+  </div>
+);
       }
     }
 
@@ -37,15 +56,26 @@ const GameBoard = () => {
           backgroundImage: `url(${background})`,
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          height: '520px',
-          width: '520px',
         }}
       >
         {generateBox()}
       </div>
+
+      <div className="extras">
+        <Dice setDiceValue={setDiceValue} />
+
+        <GameControls
+          players={players}
+          setPlayers={setPlayers}
+          currentPlayerIndex={currentPlayerIndex}
+          setCurrentPlayerIndex={setCurrentPlayerIndex}
+          setGameMessage={setGameMessage}
+          diceValue={diceValue}
+        />
+      </div>
     </div>
   );
-};
+}
 
 export default GameBoard;
 

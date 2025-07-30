@@ -1,12 +1,29 @@
-# React + Vite
+ # Nicolada: Snake & Ladder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  Project Description
+**Nicolada: Snake & Ladder** is a web-based version of the classic board game created using React. Two players take turns rolling a dice, climbing ladders, and avoiding snakes until one wins by reaching box 100.
 
-Currently, two official plugins are available:
+##  Author
+Salama Ntalel
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Features
+-  Dice rolling logic with randomized values
+-  Snakes and 🪜 ladders affect player positions
+-  2-Player turn-based gameplay
+-  Dynamic game messages for each move
+-  Board visual with background and highlighted player positions
+-  React Router navigation for game components
+-  Backend support using `json-server` for future POST/GET functionality
 
-## Expanding the ESLint configuration
+##  Tech Stack
+- React (Create-React-App)
+- React Router DOM
+- CSS (Custom)
+- json-server (for backend simulation)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Setup Instructions
+
+1. **Clone the repo**
+   ```bash
+   git clone <your-repo-link>
+   cd your-project

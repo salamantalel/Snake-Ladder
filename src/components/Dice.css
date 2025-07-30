@@ -1,22 +1,39 @@
-.dicc{
-     display: flex;
+ /* Dice.css */
+
+/* Container for dice and button */
+.dicc {
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
- 
+  margin-top: 30px; /* 🔧 Added some space from the top */
+}
 
-} 
+/* Style the Roll Dice button */
 button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: #171b18;
   color: white;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.numbtn{
-  font-size: 24px;
+button:hover {
+  background-color: #2b2f2c; /* 🔧 Slight hover effect for better UX */
+}
+
+/* Style the dice number box */
+.numbtn {
+  font-size: 48px; /* 🔧 Increased size for visibility */
   font-weight: bold;
+  background-color: #f3f3f3;
+  color: #171b18;
+  padding: 20px 40px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  text-align: center;
+  min-width: 80px;
 }

@@ -29,9 +29,16 @@ function GameControls({
   currentPlayerIndex,
   setCurrentPlayerIndex,
   setGameMessage,
+  setDiceValue,
+  diceValue,
 }) {
-  const rollDice = () => {
-    const roll = Math.floor(Math.random() * 6) + 1;
+  const rollDice = () => {  
+    const roll = diceValue;
+
+if (!roll) {
+  setGameMessage("Please roll the dice first.");
+  return;
+}
     let currentPlayer = players[currentPlayerIndex];
     let newPos = currentPlayer.position + roll;
 

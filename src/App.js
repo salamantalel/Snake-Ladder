@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import GameBoard from "./components/GameBoard";
 import Dice from "./components/Dice";
 import Leaderboard from "./components/Leaderboard";
-import Player from "./components/Player";
+import PlayerList from "./components/PlayerList";
 import GameControls from "./components/GameControls";
 
                      
@@ -15,7 +15,8 @@ function App() {
  ]);
 
  const [ currentPlayerIndex, setCurrentPlayerIndex ] = useState(0);
- const [ gameMessage, setGameMessage ] = useState("Game started! Player 1's turn");
+ const [ gameMessage, setGameMessage ] = useState("Game started! Player 1's turn"); 
+ const [diceValue, setDiceValue] = useState(null);
 
   return (
     <div>
@@ -24,15 +25,20 @@ function App() {
       <p>{gameMessage}</p>
         <Routes>
           
-          <Route path="/" element={
-            <GameBoard
-            players={players}
-            currentPlayerIndex={currentPlayerIndex} 
-            />
-          } 
-      />
-          <Route path="/player" 
-                 element={<Player player={players[currentPlayerIndex]}
+     <Route path="/" element={
+  <GameBoard
+    players={players}
+    setPlayers={setPlayers}
+    currentPlayerIndex={currentPlayerIndex}
+    setCurrentPlayerIndex={setCurrentPlayerIndex}
+    setGameMessage={setGameMessage}
+    setDiceValue={setDiceValue}
+    diceValue={diceValue}
+  />
+} />
+  
+     <Route path="/player" 
+                 element={<PlayerList player={players[currentPlayerIndex]}
           />} 
                   />
           <Route path="/dice" element={<Dice />} />
@@ -44,6 +50,7 @@ function App() {
                    currentPlayerIndex={currentPlayerIndex}
                    setCurrentPlayerIndex={setCurrentPlayerIndex}
                    setGameMessage={setGameMessage}
+      diceValue={diceValue} 
                     />
                   }
                />

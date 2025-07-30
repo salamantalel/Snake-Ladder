@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
-import './Dice.css'
+import React from 'react';
+import './Dice.css';
 
-const Dice = () => {
-  const [diceNumber, setDiceNumber] = useState(null);
-
+const Dice = ({ setDiceValue }) => {
   const rollDice = () => {
     const result = Math.floor(Math.random() * 6) + 1;
-    setDiceNumber(result);
+    setDiceValue(result); 
   };
 
   return (
     <div className='dicc'>
-      <button onClick={rollDice} >Roll Dice</button>
-      {diceNumber && (
-        <div className='numbtn' >
-          {diceNumber}
-        </div>
-      )}
+      <button onClick={rollDice}>🎲 </button>
     </div>
   );
 };
+
 export default Dice;
